@@ -11,6 +11,8 @@ using namespace std;
 
 template<typename T>
 T gcd(T a, T b) {
+    if (a < T(0)) a = a * T(-1);
+    if (b < T(0)) b = b * T(-1);
     while (b != T(0)) {
         T temp = b;
         b = a % b;

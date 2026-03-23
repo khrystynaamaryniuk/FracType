@@ -1,0 +1,7 @@
+a.out
+*.o
+fraction_main
+tests
+test_run
+test_fraction
+tests_fixed

@@ -6,8 +6,6 @@
 #include <sstream>
 using namespace std;
 
-
-
 TEST_CASE("validate throws on zero denominator") {
     pair<int, int> frac = {1, 0};
     CHECK_THROWS_AS(validate(frac), invalid_argument);
@@ -15,19 +13,6 @@ TEST_CASE("validate throws on zero denominator") {
     pair<bigint, bigint> bigfrac = {1,0};
     CHECK_THROWS_AS(validate(bigfrac), invalid_argument);
 }
-
-TEST_CASE("gcd function correctness") {
-    CHECK(gcd(48, 18) == 6);
-    CHECK(gcd<long long>(10000000000LL, 2500000000LL) == 2500000000LL);
-    CHECK(gcd<bigint>(100,25) == 25);
-}
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "./include/doctest.h"
-#include "fraction.h"
-#include "./include/bigint.h"
-#include <utility>
-#include <sstream>
-using namespace std;
 
 TEST_CASE("gcd function correctness") {
     CHECK(gcd(48, 18) == 6);
@@ -87,7 +72,6 @@ TEST_CASE("fraction handles negatives correctly") {
     auto bigresult = sum(bf1, bf2);
     CHECK(bigresult.first == 0);
     CHECK(bigresult.second == 1);
-
 }
 
 TEST_CASE("zero numerator is reduced properly") {
